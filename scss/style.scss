@@ -14,8 +14,21 @@ body {
 	font-style: italic;
 	font-weight: 400;
 }
+
 @media (max-width: 425px) {
 	.hide {
+		display: none;
+	}
+	.hide-medium {
+		display: block;
+	}
+	.hide-small {
+		display: none;
+	}
+}
+
+@media (max-width: 768px) {
+	.hide-medium {
 		display: none;
 	}
 }
@@ -321,6 +334,10 @@ body {
 		display: grid;
 		gap: 30px;
 		grid-template-columns: repeat(3, 1fr);
+		&-padding {
+			padding-top: 128px;
+			padding-bottom: 128px;
+		}
 		@media (max-width: 790px) {
 			grid-template-columns: repeat(2, 1fr);
 			gap: 16px;
@@ -369,6 +386,9 @@ body {
 	font-size: 16px;
 	line-height: 19px;
 	transition: 0.5s;
+	& > img {
+		padding-right: 23px;
+	}
 	&:hover {
 		color: #ffffff;
 		background: #f16d7f;
@@ -598,5 +618,70 @@ body {
 		height: inherit;
 		width: 100%;
 		object-fit: cover;
+	}
+}
+
+.prod-sell {
+	&__inner {
+		border: 1px solid #eaeaea;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		padding: 64px;
+		background: #fff;
+		position: relative;
+		margin-top: -64px;
+		@media (max-width: 768px) {
+			margin-top: 0;
+		}
+		@media (max-width: 425px) {
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+	}
+	&__red-beam {
+		border: 1.5px solid #ef5b70;
+		width: 60px;
+		margin: 12px;
+	}
+	&__title {
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 22px;
+		color: #4d4d4d;
+	}
+	&__subtitle {
+		font-weight: 300;
+		color: #5e5e5e;
+		text-align: center;
+		max-width: 555px;
+		padding-top: 48px;
+		padding-bottom: 32px;
+	}
+	&__price {
+		font-weight: 300;
+		font-size: 24px;
+		line-height: 29px;
+		color: #ef5b70;
+	}
+	&__grey-beam {
+		border: 1px solid #eaeaea;
+		width: 100%;
+		margin: 64px;
+	}
+	&__choose {
+		display: flex;
+	}
+	&__item {
+		display: flex;
+	}
+	&__text {
+		margin-left: 23px;
+		padding-right: 9px;
+		color: #6f6e6e;
+		@media (max-width: 425px) {
+			font-size: 10px;
+			line-height: 12px;
+		}
 	}
 }
